@@ -1,3 +1,4 @@
+
 import java.util.Date;
 
 /**
@@ -48,7 +49,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
-            if(index < 0 || index >= ln)
+            if(index < 0 || index >= students.length)
 		throw new IllegalArgumentException();
                 
             return students[index]; 
@@ -57,7 +58,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
-            if(student == null || index < 0 || index >= ln)
+            if(student == null || index < 0 || index >= students.length)
 		throw new IllegalArgumentException();
             this.students[index] = student;
 	}
@@ -86,7 +87,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
-             if(student == null || index < 0 || index >= ln+1)
+             if(student == null || index < 0 || index >= students.length)
             	 throw new IllegalArgumentException();
              if(index == 0) addFirst(student);
              if(index == ln) addLast(student);
@@ -124,7 +125,7 @@ public class StudentGroup implements StudentArrayOperation {
              throw new IllegalArgumentException();
 		 int i = 0,flag = 0;
 		 for(i = 0;i < ln;++i) {
-			 if(students[i].equals(student)) {
+			 if((students[i].getId()== student.getId()) && ((students[i].getFullName()).equals(student.getFullName())) && (students[i].getAvgMark()== student.getAvgMark()) && (((students[i].getBirthDate()).compareTo(student.getBirthDate())== 0))) {
 				 flag = 1;
 				 break;
 			 }
@@ -151,7 +152,7 @@ public class StudentGroup implements StudentArrayOperation {
             throw new IllegalArgumentException();
 		 int i = 0,flag = 0;
 		 for(i = 0;i < ln;++i) {
-			 if(students[i].equals(student)) {
+			 if((students[i].getId()== student.getId()) && ((students[i].getFullName()).equals(student.getFullName())) && (students[i].getAvgMark()== student.getAvgMark()) && (((students[i].getBirthDate()).compareTo(student.getBirthDate())== 0))) {
 				 flag = 1;
 				 break;
 			 }
@@ -192,7 +193,7 @@ public class StudentGroup implements StudentArrayOperation {
             throw new IllegalArgumentException();
 		 int i = 0,flag = 0;
 		 for(i = 0;i < ln;++i) {
-			 if(students[i].equals(student)) {
+			 if((students[i].getId()== student.getId()) && ((students[i].getFullName()).equals(student.getFullName())) && (students[i].getAvgMark()== student.getAvgMark()) && (((students[i].getBirthDate()).compareTo(student.getBirthDate())== 0))) {
 				 flag = 1;
 				 break;
 			 }
@@ -269,7 +270,7 @@ public class StudentGroup implements StudentArrayOperation {
             throw new IllegalArgumentException();
 		int i = 0,flag = 0;
 		 for(i = 0;i < ln;++i) {
-			 if(students[i].equals(student)) {
+			 if((students[i].getId()== student.getId()) && ((students[i].getFullName()).equals(student.getFullName())) && (students[i].getAvgMark()== student.getAvgMark()) && (((students[i].getBirthDate()).compareTo(student.getBirthDate())== 0))) {
 				 flag = 1;
 				 break;
 			 }
